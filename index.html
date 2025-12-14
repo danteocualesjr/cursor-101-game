@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Space Invaders</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="game-container">
+        <!-- HUD Overlay -->
+        <div class="hud">
+            <div class="hud-item">
+                <span class="hud-label">Score:</span>
+                <span id="score">0</span>
+            </div>
+            <div class="hud-item">
+                <span class="hud-label">High Score:</span>
+                <span id="high-score">0</span>
+            </div>
+            <div class="hud-item">
+                <span class="hud-label">Lives:</span>
+                <span id="lives">3</span>
+            </div>
+            <div class="hud-item">
+                <span class="hud-label">Level:</span>
+                <span id="level">1</span>
+            </div>
+        </div>
+
+        <!-- Canvas -->
+        <canvas id="gameCanvas"></canvas>
+
+        <!-- Start Menu -->
+        <div id="startMenu" class="menu-screen">
+            <h1>SPACE INVADERS</h1>
+            <div class="menu-content">
+                <p class="instructions">
+                    Use <strong>Arrow Keys</strong> or <strong>A/D</strong> to move<br>
+                    Press <strong>Spacebar</strong> to shoot<br>
+                    Destroy all enemies to advance!
+                </p>
+                <div class="high-score-display">
+                    <p>High Score: <span id="menu-high-score">0</span></p>
+                </div>
+                <button id="startButton" class="menu-button">START GAME</button>
+            </div>
+        </div>
+
+        <!-- Game Over Screen -->
+        <div id="gameOverScreen" class="menu-screen hidden">
+            <h1>GAME OVER</h1>
+            <div class="menu-content">
+                <p class="final-score">Final Score: <span id="final-score">0</span></p>
+                <p class="high-score-message" id="high-score-message"></p>
+                <button id="restartButton" class="menu-button">PLAY AGAIN</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="bullet.js"></script>
+    <script src="powerup.js"></script>
+    <script src="player.js"></script>
+    <script src="enemy.js"></script>
+    <script src="gameState.js"></script>
+    <script src="game.js"></script>
+</body>
+</html>
