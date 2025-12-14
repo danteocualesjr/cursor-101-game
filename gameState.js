@@ -20,6 +20,7 @@ class GameState {
     }
 
     showMenu() {
+        
         const menu = document.getElementById('startMenu');
         const gameOver = document.getElementById('gameOverScreen');
         if (menu) menu.classList.remove('hidden');
