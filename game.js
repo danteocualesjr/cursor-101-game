@@ -53,14 +53,25 @@ class Game {
 
         // Start button
         const startButton = document.getElementById('startButton');
+        const gameInstance = this;
         if (startButton) {
-            startButton.addEventListener('click', () => this.startGame());
+            const startHandler = () => {
+                console.log('Start button clicked');
+                gameInstance.startGame();
+            };
+            startButton.addEventListener('click', startHandler);
+            startButton.onclick = startHandler;
         }
 
         // Restart button
         const restartButton = document.getElementById('restartButton');
         if (restartButton) {
-            restartButton.addEventListener('click', () => this.startGame());
+            const restartHandler = () => {
+                console.log('Restart button clicked');
+                gameInstance.startGame();
+            };
+            restartButton.addEventListener('click', restartHandler);
+            restartButton.onclick = restartHandler;
         }
 
         // Window resize
@@ -252,8 +263,9 @@ class Game {
 }
 
 // Initialize game when page loads
+let game;
 window.addEventListener('DOMContentLoaded', () => {
-    const game = new Game();
+    game = new Game();
     // Update high score display on menu
     const menuHighScore = document.getElementById('menu-high-score');
     if (menuHighScore) {
